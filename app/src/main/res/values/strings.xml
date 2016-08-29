@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Register</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="sexo">Sexo:</string>
+    <string name="telefone">Telefone</string>
+    <string name="nome">Nome</string>
+</resources>
