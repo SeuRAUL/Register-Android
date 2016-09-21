@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +20,8 @@
         android:id="@+id/nameText"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:hint="@string/nome"
+        android:layout_toEndOf="@+id/fotoBtn" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,46 +30,10 @@
         android:ems="10"
         android:id="@+id/foneText"
         android:layout_below="@+id/nameText"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:text="@string/telefone" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/foneText"
-        android:id="@+id/RadioGroup1"
-        android:layout_alignParentEnd="false"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sexo"
-            android:id="@+id/sexTextView"
-            android:layout_below="@+id/foneText"
-            android:layout_alignParentStart="true"
-            android:layout_alignBottom="@+id/MascRB" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/feminino"
-            android:id="@+id/FemRB"
-            android:checked="false"
-            android:layout_below="@+id/foneText"
-            android:layout_alignParentEnd="true" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/masculino"
-            android:id="@+id/MascRB"
-            android:checked="false"
-            android:layout_below="@+id/foneText"
-            android:layout_toStartOf="@+id/FemRB" />
-
-    </RadioGroup>
+        android:text="@string/telefone"
+        android:hint="@string/telefone"
+        android:layout_alignStart="@+id/nameText" />
 
     <Button
         android:layout_width="wrap_content"
@@ -74,7 +41,62 @@
         android:text="@string/cadastrar"
         android:id="@+id/RegisterButton"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@android:drawable/btn_default" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RadioGroup1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/foneText"
+        android:layout_toEndOf="@+id/sexTextView">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feminino"
+            android:id="@+id/FemRB"
+            android:checked="false"
+            tools:text="@string/feminino" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masculino"
+            android:id="@+id/MascRB"
+            android:checked="false"
+            tools:text="@string/masculino" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sexo"
+        android:id="@+id/sexTextView"
+        android:layout_below="@+id/foneText"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/fotoBtn"
+        android:layout_above="@+id/RadioGroup1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/RadioGroup1"
+        android:layout_alignParentStart="true"
+        android:id="@+id/dataText"
+        android:hint="@string/data"
+        android:text="@string/data"
+        android:inputType="date" />
 
 
 </RelativeLayout>
